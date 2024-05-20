@@ -1,0 +1,54 @@
+{
+      "menu": [
+        {
+          "id": 101,
+          "name": "Spaghetti Carbonara",
+          "price": 12.99
+        },
+        {
+          "id": 102,
+          "name": "Grilled Salmon",
+          "price": 18.99
+        },
+        {
+          "id": 103,
+          "name": "Caesar Salad",
+          "price": 8.99
+        }
+      ],
+    "orders": [
+      {
+        "id": 1,
+        "userId": 1,
+        "items": [
+          { "id": 101, "quantity": 2 },
+          { "id": 102, "quantity": 1 }
+        ],
+        "total": 44.97
+      },
+      {
+        "id": 2,
+        "userId": 2,
+        "items": [ 
+          { "id": 103, "quantity": 1 }
+        ],
+        "total": 8.99,
+        "staus": "pending"
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "username": "user1@gmail.com",
+        "password": "password1",
+        "role": "admin"
+      },
+      {
+        "id": 2,
+        "username": "user2@gmail.com",
+        "password": "password2",
+        "role": "customer"
+      }
+    ]
+  }
+  
