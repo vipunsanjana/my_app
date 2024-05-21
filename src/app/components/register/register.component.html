@@ -8,11 +8,11 @@
           <form [formGroup]="myRegForm" (ngSubmit)="handleSubmit()">
             <div class="form-group">
                 <label for="username">First Name:</label>
-                <input class="form-control" type="text" id="firstname" formControlName="firstname"  >
+                <input class="form-control" type="text" id="firstname" formControlName="firstName"  >
             </div>
             <div class="form-group">
                 <label for="username">Last Name:</label>
-                <input class="form-control" type="text" id="lastname" formControlName="lastname"  >
+                <input class="form-control" type="text" id="lastname" formControlName="lastName"  >
             </div>
             <div class="form-group">
                 <label for="username">NIC:</label>
@@ -34,7 +34,7 @@
                 <input class="form-control" type="password" id="password" formControlName="password" >
             </div>
             
-            <input type="submit" class="btn btn-primary" value="Sign Up"  />
+            <input type="submit" class="btn btn-primary" value="Sign Up" [disabled]="!myRegForm.valid" />
           </form>
         </div>
       </div>
