@@ -1,2 +1,43 @@
-<p class="p-5">register works!</p>
-<p>vipun</p>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <p>{{ heading }}</p>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="myRegForm" (ngSubmit)="handleSubmit()">
+            <div class="form-group">
+                <label for="username">First Name:</label>
+                <input class="form-control" type="text" id="firstname" formControlName="firstname"  >
+            </div>
+            <div class="form-group">
+                <label for="username">Last Name:</label>
+                <input class="form-control" type="text" id="lastname" formControlName="lastname"  >
+            </div>
+            <div class="form-group">
+                <label for="username">NIC:</label>
+                <input class="form-control" type="text" id="nic" formControlName="nic"  >
+            </div>
+            <div class="form-group">
+                <label for="username">Gender:</label>
+                <select class="form-control" type="text" id="gender" formControlName="gender"  >
+                    <option class="form-control" value="male">Male</option>
+                    <option class="form-control" value="female">Fe-Male</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input class="form-control" type="email" id="email" formControlName="email" >
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input class="form-control" type="password" id="password" formControlName="password" >
+            </div>
+            
+            <input type="submit" class="btn btn-primary" value="Sign Up"  />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
