@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../../shared/services/auth.service';
 import { User } from '../../../utils/interfaces/User';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginComponent {
 email: string = "";
 password: string = "";
 submitted: boolean = false;
+
 
 constructor(private authService: AuthService, private router: Router){
 
@@ -47,7 +49,8 @@ constructor(private authService: AuthService, private router: Router){
               alert("login successful!");
               console.log(user);
               localStorage.setItem("user",JSON.stringify(user));
-              this.router.navigate(["/profile"]);
+              this.authService.setisloggedin();
+              this.router.navigate([""]);
           } else {
               alert("invalid password!");
           }
@@ -65,5 +68,7 @@ constructor(private authService: AuthService, private router: Router){
     
    
   }
+
+ 
 
 }

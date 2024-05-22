@@ -1,0 +1,42 @@
+.mat-toolbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.mat-toolbar a:hover {
+    color: green;
+}
+
+.mat-toolbar a.active {
+    color: rgb(17, 18, 17);
+    font-weight: bold;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.mat-toolbar nav ul li {
+    margin-left: 16px;
+}
+
+.mat-toolbar nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.mat-toolbar nav ul li a:hover {
+    color: green;
+}
+
+.mat-toolbar nav ul li a.active {
+    color: rgb(5, 7, 5);
+    font-weight: bold;
+}

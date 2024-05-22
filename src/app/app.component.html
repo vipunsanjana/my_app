@@ -1,11 +1,34 @@
-<h1>Anular Router App</h1>
+<!-- <h1>Anular Router App</h1> -->
 
-<nav>
-    <ul>
-        <li><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a></li>
-        <li><a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">Register</a></li>
-    </ul>
-</nav>
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>
+        <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">My App</a>
+    </span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button>
+    <button *ngIf="isloggedin" (click)="handlelogout()">
+        Logout
+    </button>
+    <nav *ngIf="!isloggedin">
+        <ul>
+            <li><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a></li>
+        </ul>
+    </nav>
+    <nav *ngIf="!isloggedin">
+        <ul>
+            <li><a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">Register</a></li>
+        </ul>
+    </nav>
+</mat-toolbar>
 
 <div class="container mt-5">
-<router-outlet><router-outlet />
+    <router-outlet></router-outlet>
+</div>
