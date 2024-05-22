@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../utils/interfaces/User';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +8,24 @@ import { User } from '../../utils/interfaces/User';
 export class AuthService {
 
   private baseUrl:string = "http://localhost:3000";
+  _loggedin : BehaviorSubject<boolean>
 
-  constructor() { }
+
+  constructor(){
+    this._loggedin = new BehaviorSubject<boolean>(false);
+    }
+
+
+    get isloggedin():BehaviorSubject<boolean>{
+      return this._loggedin;
+    }
+setisloggedin(){
+  this._loggedin.next(true);
+}
+
+logout(){
+  this._loggedin.next(false);
+}
 
   async authenticate(email: string, password:string):Promise<User[]>{
 
